@@ -1,0 +1,16 @@
+**********************PARENT COMPONENT STARTS
+*********************************************
+<p>
+  parent-component works!
+</p>
+<h1>
+    {{pdata}}
+</h1>
+{{receiveValueFromChild}}
+<br>
+
+***************************************
+
+CHILD COMPONENT STARTS
+*********************************************
+<app-child-component [reciveFromParent]="pdata" (msgEvent)="recieveValueChild($event)"></app-child-component>

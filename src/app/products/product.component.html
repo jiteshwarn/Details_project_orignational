@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Product Code</th>
+        <th>Product Name</th>
+        <th>Rating</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of allProducts">
+        <td>{{product.productId}}</td>
+        <td>{{product.productCode}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.starRating}}</td>
+        <td><img [src]="product.imageUrl" /></td>
+      </tr>
+    </tbody>
+  </table>

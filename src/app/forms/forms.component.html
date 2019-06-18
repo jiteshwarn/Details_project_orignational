@@ -1,0 +1,100 @@
+<div class="send-for-review">
+  <div class="Assign-reviewers">
+    <div>Assign Reviewers</div>
+    <div class="reviewers-section">
+      <div>
+        <mat-form-field>
+          <mat-select name="AssignReviewers" [(ngModel)]="newAttribute.AssignReviewers">
+            <mat-option value="User">
+              User
+            </mat-option>
+            <mat-option value="Contact">
+              Contact
+            </mat-option>
+            <mat-option value="Email">
+              Email
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="padding-left" style="position: relative">
+        <mat-form-field class="ms-TextField-field">
+          <input matInput class="form-control" placeholder="Name" type="text" id="newAttributeName"
+            [(ngModel)]="newAttribute.userFullName" name="newAttributeName" />
+            <div class="cdk-overlay-pane-list" *ngIf="searchFieldVal== true">
+                <div class="mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted" role="listbox" *ngIf="searchedValues.length > 0">
+                    <mat-option (click)= "updateVal(field)" class="options" role="option" *ngFor="let field of searchedValues; let i = index">
+                        {{field.userFullName}} - {{field.EmailAddress}}
+                    </mat-option>
+                </div>
+                <div class="mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted" role="listbox" *ngIf="searchedValues.length === 0">
+                  <mat-option (click)= "updateVal(field)" class="options" role="option">
+                      0 Results
+                  </mat-option>
+              </div>
+            </div>
+          </mat-form-field>
+      </div>
+      <div class="padding-left" *ngIf="newAttribute.AssignReviewers.indexOf('Email') == 0">        
+        <mat-form-field class="ms-TextField-field">
+          <input matInput class="form-control" placeholder="Email" type="text" id="newAttributePrice"
+            [(ngModel)]="newAttribute.EmailAddress" name="newAttributePrice" />
+        </mat-form-field>
+      </div>
+      <div class="padding-left">
+        <button *ngIf="newAttribute.AssignReviewers.indexOf('Email') !== 0" class="BG" type="button" color="primary"
+          (click)="searchFieldValue()">Search</button>
+        <button class="BG" type="button" color="primary" (click)="addFieldValue()">Add</button>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="reviewers">
+    <div class="reviewer-list-header">
+      <div>Name</div>
+      <div class="padding-left">Email</div>
+      <div class="padding-left">Action</div>
+    </div>
+    <div class="reviewer-list-body" *ngFor="let field of fieldArray; let i = index">
+      <div>
+        {{field.AssignReviewers}}
+      </div>
+      <div class="padding-left">
+          {{field.userFullName}}
+        </div>
+      <div class="padding-left">
+        {{field.EmailAddress}}
+      </div>
+      <div class="padding-left">
+        <button class="btn btn-default" type="button" (click)="deleteFieldValue(i)">Delete</button>
+      </div>
+    </div>
+  </div> -->
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    
+    <!-- Name Column -->
+    <ng-container matColumnDef="EmailAddress">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.EmailAddress}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="userFullName">
+      <th mat-header-cell *matHeaderCellDef> userFullName </th>
+      <td mat-cell *matCellDef="let element"> {{element.userFullName}} </td>
+    </ng-container>
+   
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+    
+  <!-- Copyright 2019 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
+  <div class="actions">
+      <button class="btn btn-default" type="button" [disabled]="fieldArray.length <= 0">Next</button>
+        <button class="btn btn-default" type="button">Cancel</button>
+    </div>
+</div>

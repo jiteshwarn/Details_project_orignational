@@ -1,0 +1,54 @@
+
+  .send-for-review {
+   border: 1px solid grey;
+   box-sizing: border-box;
+  }
+  .reviewers-section {
+    display: flex;
+  }
+  .reviewers {
+  
+  }
+  .reviewer-list-header, .reviewer-list-body{
+  display: flex;
+  /*justify-content: space-evenly; */
+  }
+  .reviewer-list-header, .reviewer-list-body div{
+   padding: 5px;
+    }
+  .padding-left {
+    padding-left: 6px;
+  }
+
+  .pdf-toolbar {
+    padding-left: 5px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .cdk-overlay-pane-list {
+    position: absolute;
+    pointer-events: auto;
+    box-sizing: border-box;
+    z-index: 1000;
+    display: flex;
+    max-width: none;
+    max-height: none;
+    top: 102%;
+    /* bottom: -155%; */
+    width: 180px;
+  }
+  .cdk-overlay-pane-list div {
+    width: 100%;
+  }
+  .options {
+    width: 100%;
+  }
+
+
+  /* 
+.box-shadow{
+
+
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12)
+  } */
