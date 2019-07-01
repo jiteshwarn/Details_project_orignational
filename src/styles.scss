@@ -1,0 +1,27 @@
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "vendors/linericon/style.css";
+@import"vendors/lightbox/simpleLightbox.css";
+@import"vendors/nice-select/css/nice-select.css";
+@import"vendors/animate-css/animate.css";
+@import"vendors/popup/magnific-popup.css";
+@import"vendors/flaticon/flaticon.css";
+@import "css/style.css";
+@import "css/responsive.css";
+html, body { height: 100%; }
+
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+
+  .basic-container {
+    padding: 30px;
+  }
+  
+  .version-info {
+    font-size: 8px;
+    float: right;
+  }
+  
+}
+
