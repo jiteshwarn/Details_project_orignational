@@ -16,16 +16,23 @@ import { SimpleComponent } from './simpleComponent/app.simple.component';
 import { ParentComponentComponent } from './parent-component/parent-component.component';
 import { ChildComponentComponent } from './child-component/child-component.component';
 import { TestjavascriptComponent } from './testjavascript/testjavascript.component';
+
+
+// new website
+import { HomeComponent } from './HomeComponent/home.component'
+
+
 // import { FormsComponent } from './forms/forms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const appRoutes: Routes = [
+  {path: 'home',component: HomeComponent},
   { path: 'product', component: ProductComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'product-detail', component: ProductDetailsComponent },
   {path: 'simple-component',component:SimpleComponent},
   {path:'parent-component',component:ParentComponentComponent},
   // {path:'forms',component:FormsComponent},
-  { path: '**', component: WelcomeComponent }
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
@@ -38,6 +45,7 @@ const appRoutes: Routes = [
     ParentComponentComponent,
     ChildComponentComponent,
     TestjavascriptComponent,
+    HomeComponent
     // FormsComponent
   ],
   imports: [  

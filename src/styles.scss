@@ -1,4 +1,3 @@
-
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "vendors/linericon/style.css";
 @import"vendors/lightbox/simpleLightbox.css";
@@ -8,20 +7,19 @@
 @import"vendors/flaticon/flaticon.css";
 @import "css/style.css";
 @import "css/responsive.css";
-html, body { height: 100%; }
 
-body { 
-  font-family: Roboto, Arial, sans-serif;
-  margin: 0;
+ @import "scss/_variables.scss";
+@import "scss/_button.scss";
+@import "scss/_elements.scss";
+@import "scss/_feature.scss";
+@import "scss/_footer.scss";
+@import "scss/_gallery.scss";
+@import "scss/_header.scss";
+@import "scss/_predefine.scss";
+@import "scss/_testimonials.scss";
+@import "scss/breadcrumb.scss";
+@import "scss/style.scss";
 
-  .basic-container {
-    padding: 30px;
-  }
-  
-  .version-info {
-    font-size: 8px;
-    float: right;
-  }
-  
+.header_area {
+    background-image: -webkit-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
 }
-
